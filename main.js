@@ -31,7 +31,8 @@ for (i = 0; i < 15; i++) {
   let span = create("span");
   span.className = "num";
   span.append(i + 1);
-  span.style.cssText = "display:block; text-align:center;padding:20px";
+  span.style.cssText =
+    " font-weight: bold;display: block;text-align: center;padding: 20px;font-size: 25px;";
 
   box.className = "box";
   box.style.cssText =
