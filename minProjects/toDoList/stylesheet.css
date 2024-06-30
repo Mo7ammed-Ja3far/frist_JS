@@ -1,0 +1,74 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+.all {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0px auto;
+  background-color: #eee;
+  width: 600px;
+  text-align: center;
+}
+.title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.form {
+  /* background-color: red; */
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  /* width: 100%; */
+  /* padding: 10px; */
+}
+.add {
+  flex: 2;
+  border: #eed solid;
+  padding: 10px;
+  border-radius: 10px;
+}
+.add:placeholder-shown {
+  color: #2083da;
+}
+.add:focus-visible {
+  outline: none;
+}
+.input {
+  border-radius: 10px;
+  background-color: #2083da;
+  padding: 10px;
+  color: white;
+  flex: 0.5;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+}
+.output {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.task {
+  padding: 10px;
+  background-color: white;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+}
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.task::after {
+  font-size: 14px;
+  padding: 5px 8px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  top: 7px;
+  content: "Delete";
+  position: absolute;
+  right: 15px;
+}
