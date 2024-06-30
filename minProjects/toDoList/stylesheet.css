@@ -1,5 +1,9 @@
 * {
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
 }
 .all {
   border-radius: 10px;
@@ -43,6 +47,14 @@
   font-size: 17px;
   font-weight: bold;
 }
+@media (max-width: 767px) {
+  .all {
+    width: 100%;
+  }
+  .input {
+    font-size: 15px;
+  }
+}
 .output {
   margin-top: 20px;
   display: flex;
@@ -61,7 +73,7 @@
   text-decoration: line-through;
   opacity: 0.5;
 }
-.task::after {
+.delete {
   font-size: 14px;
   padding: 5px 8px;
   background-color: red;
@@ -71,4 +83,13 @@
   content: "Delete";
   position: absolute;
   right: 15px;
+}
+.stats {
+  margin: 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats span {
+  /* background-color: white; */
 }

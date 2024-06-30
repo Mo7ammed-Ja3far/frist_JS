@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
     <title>ToDoList</title>
   </head>
   <body>
@@ -20,9 +21,23 @@
         <input class="input" type="button" value="Add Task" />
       </div>
       <div class="output">
-        <!-- <div class="task done">for trying-That</div> -->
+        <!-- <div class="no-task">No tasks yet!</div> -->
+        <!-- <div class="task done">
+          for trying-That
+          <div class="delete">delete</div>
+        </div>
+        <div class="task">
+          for trying-That
+
+          <div class="delete">delete</div>
+        </div> -->
+      </div>
+      <div class="stats">
+        <span class="to-do">To Do: 0</span>
+        <span class="to-done">Done: 0</span>
       </div>
     </div>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.1/dist/sweetalert2.all.min.js"></script>
   </body>
 </html>
