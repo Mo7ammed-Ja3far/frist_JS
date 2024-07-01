@@ -1,0 +1,66 @@
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+.content {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #eee;
+}
+.inputs {
+  display: flex;
+  gap: 20px;
+}
+#the-key:focus,
+#the-value:focus {
+  outline: none;
+}
+#the-key,
+#the-value {
+  width: 100%;
+  padding: 10px;
+  border: #eee;
+}
+.spans {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-weight: bold;
+  cursor: pointer;
+  /* font-size: 13px; */
+}
+@media (max-width: 767px) {
+  .spans {
+    font-size: 13px;
+  }
+}
+
+.spans span {
+  border-radius: 6px;
+  display: block;
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+}
+.here {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  padding: 15px;
+  border: black dashed 2px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.results > span {
+  display: block;
+  background-color: #eee;
+  padding: 5px;
+}
+.results .key {
+  color: green;
+}
