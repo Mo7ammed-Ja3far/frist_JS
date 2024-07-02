@@ -1,0 +1,86 @@
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+.content {
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: #eee;
+}
+.inputs {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+.inputs .text {
+  flex: 1;
+  border: none;
+  padding: 10px;
+}
+.inputs .text:placeholder-shown {
+  font-size: 20px;
+}
+
+.inputs .btn {
+  background-color: #e91e63;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  flex: 0.25;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+}
+.here {
+  padding: 20px;
+  background-color: #ccc;
+}
+.here .result {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .inputs .text:placeholder-shown {
+    font-size: 14px;
+  }
+  .inputs .text {
+    padding: 5px;
+  }
+  .inputs .btn {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+.here .box:not(:first-child) {
+  margin-top: 10px;
+}
+.box a {
+  background-color: #337ab7;
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  padding: 5px;
+}
+.box span {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  float: right;
+}
+.box .stars {
+  margin-right: 10px;
+  background-color: #009688;
+  color: white;
+  border-radius: 6px;
+  padding: 5px;
+}
+.box {
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
