@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>imgSlider</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="counter">img #<span>1</span></div>
+      <div class="imgs">
+        <img src="Gallery/gallery-01.png" class="active" alt="" />
+        <img src="Gallery/gallery-02.png" alt="" />
+        <img src="Gallery/gallery-03.jpg" alt="" />
+
+        <img src="Gallery/gallery-04.png" alt="" />
+        <img src="Gallery/gallery-05.jpg" alt="" />
+        <img src="Gallery/gallery-06.png" alt="" />
+      </div>
+      <div class="control">
+        <input class="disable" type="button" value="previse" />
+        <ul class="ul-li">
+          <!-- <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li> -->
+        </ul>
+        <input type="button" value="next" />
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.1/dist/sweetalert2.all.min.js"></script>
+  </body>
+</html>

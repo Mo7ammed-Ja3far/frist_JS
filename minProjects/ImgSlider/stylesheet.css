@@ -1,0 +1,81 @@
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+  background-color: #eee;
+}
+.content .imgs {
+  /* width: 100%; */
+  min-height: 590px;
+  position: relative;
+}
+.content .imgs img {
+  width: 100%;
+  position: absolute;
+  max-height: 590px;
+  opacity: 0;
+}
+.content .imgs img.active {
+  opacity: 1;
+}
+.content .counter {
+  z-index: 1;
+  background-color: rgba(00, 00, 00, 0.5);
+  color: white;
+  padding: 4px;
+  width: fit-content;
+  font-size: 12px;
+  position: absolute;
+  border-radius: 6px;
+  user-select: none;
+  top: 20px;
+  left: 20px;
+}
+.content .control input {
+  padding: 6px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  /* background-color: #009688; */
+  background-color: #337ab7;
+  color: white;
+  font-weight: bold;
+}
+.content .control input.disable {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.content .control {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.content .control ul {
+  list-style: none;
+  display: flex;
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+}
+.content .control ul li {
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px;
+  background-color: #ddd;
+}
+.content .control ul li.active {
+  /* background-color: #009688; */
+  background-color: #337ab7;
+  color: white;
+  font-weight: bold;
+}
