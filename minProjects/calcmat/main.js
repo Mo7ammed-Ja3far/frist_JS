@@ -26,80 +26,91 @@ const form = document.getElementById("Fform");
 const Xn = document.getElementsByClassName("xn")[0];
 const inputs = document.getElementsByClassName("inputs")[0];
 const form2 = document.createElement("form");
+const numOfEls = document.getElementById("vc");
+let Vc = numOfEls.value !== "" ? +numOfEls.value : 0;
 form.append(form2);
 let arr = [];
 let inerarr = [];
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+  Vc = numOfEls.value !== "" ? +numOfEls.value : 0;
+  console.log(Vc);
   Xn.innerHTML = "";
-  inputs.innerHTML = "";
+  if (+Vc <= 0) {
+    console.log(+Vc);
+    Swal.fire({
+      icon: "error",
+      title: "Invalid Number",
+      text: "Choose Number More than 0",
+    });
+  } else {
+    inputs.innerHTML = "";
 
-  form2.innerHTML = "";
-  const numOfEls = document.getElementById("vc");
-  // نفترض أن هناك عنصر واحد فقط بهذا الاسم
-  const Vc = numOfEls.value !== "" ? +numOfEls.value : 0;
-  for (let row = 0; row <= Vc; row++) {
-    for (let colmn = 0; colmn <= Vc; colmn++) {
-      if (row == 0) {
-        console.log(row);
-        const div = document.createElement(`div`);
-        if (colmn < Vc) {
-          div.textContent = `X${colmn + 1}`;
+    form2.innerHTML = "";
+    // نفترض أن هناك عنصر واحد فقط بهذا الاسم
+    for (let row = 0; row <= Vc; row++) {
+      for (let colmn = 0; colmn <= Vc; colmn++) {
+        if (row == 0) {
+          console.log(row);
+          const div = document.createElement(`div`);
+          if (colmn < Vc) {
+            div.textContent = `X${colmn + 1}`;
+          } else {
+            div.textContent = `C`;
+          }
+          div.id = `x-${colmn + 1}`;
+          div.className = "VariablesName";
+          Xn.append(div);
         } else {
-          div.textContent = `C`;
+          const inp = document.createElement(`input`);
+          inp.setAttribute("type", "number");
+          inp.style.width = `calc(100% / ${+Vc + 1})`;
+          inp.id = `inp-${row - 1}  ${colmn}`;
+          rows = [...rows, inp.id];
+          inp.className = "input";
+          // rows.map((e) => document.getElementById(e).value || 0);
+          inputs.append(inp);
         }
-        div.id = `x-${colmn + 1}`;
-        div.className = "VariablesName";
-        Xn.append(div);
-      } else {
-        const inp = document.createElement(`input`);
-        inp.setAttribute("type", "number");
-        inp.style.width = `calc(100% / ${+Vc + 1})`;
-        inp.id = `inp-${row - 1}  ${colmn}`;
-        rows = [...rows, inp.id];
-        inp.className = "input";
-        // rows.map((e) => document.getElementById(e).value || 0);
-        inputs.append(inp);
       }
     }
-  }
 
-  const sub = document.createElement("input");
-  sub.addEventListener("click", (e) => {
-    rows = rows.map((e) => +document.getElementById(e).value || 0);
-    console.log(rows);
-    for (let i = 0; i < Vc; i++) {
-      arr[i] = rows.slice(0, Vc + 1);
-      rows = rows.slice(Vc + 1);
+    const sub = document.createElement("input");
+    sub.addEventListener("click", (e) => {
+      rows = rows.map((e) => +document.getElementById(e).value || 0);
+      console.log(rows);
+      for (let i = 0; i < Vc; i++) {
+        arr[i] = rows.slice(0, Vc + 1);
+        rows = rows.slice(Vc + 1);
+        console.log(arr);
+      }
       console.log(arr);
-    }
-    console.log(arr);
-  });
-  sub.type = "submit";
-  form2.append(sub);
-  sub.value = "Show Value";
-  form2.addEventListener("submit", function (event) {
-    form2.innerHTML = "";
-    event.preventDefault();
-
-    const pre = document.createElement("pre");
-    pre.textContent = solve(arr);
-    form2.append(pre);
-  });
+    });
+    sub.type = "submit";
+    form2.append(sub);
+    sub.value = "Show Value";
+    form2.addEventListener("submit", function (event) {
+      form2.innerHTML = "";
+      event.preventDefault();
+      console.log(Vc);
+      const pre = document.createElement("pre");
+      pre.textContent = solve(arr);
+      form2.append(pre);
+    });
+  }
 });
 function solve(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (i != arr.length - 1) {
       let newI = i + 1;
-      while (arr[i][i] === 0) {
+      while (arr[i][i] == 0) {
         SwapArr(arr[i], arr[newI]);
         newI++;
         if (newI == arr.length) break;
       }
     }
     if (arr[i][i] == 0) {
-      console.log("Infinty Solution");
-      break;
+      let result = ["Infinty solution"];
+      return result;
     } else {
       arr[i] = arrMulNum(arr[i], 1 / arr[i][i]);
       for (let k = i + 1; k < arr.length; k++) {
