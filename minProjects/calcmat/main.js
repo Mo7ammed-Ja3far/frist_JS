@@ -54,7 +54,7 @@ form.addEventListener("submit", function (event) {
           console.log(row);
           const div = document.createElement(`div`);
           if (colmn < Vc) {
-            div.textContent = `X${colmn + 1}`;
+            div.innerHTML = `X<span>${colmn + 1}</span>`;
           } else {
             div.textContent = `C`;
           }
